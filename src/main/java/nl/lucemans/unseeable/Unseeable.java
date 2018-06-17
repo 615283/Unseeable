@@ -43,8 +43,9 @@ import java.util.logging.Level;
  * See https://lucemans.nl
  */
 public class Unseeable extends JavaPlugin implements Listener {
-
+    
     public static Unseeable instance;
+    
     public static ArrayList<Map> maps = new ArrayList<Map>();
     public static GameInstance currentGame = null;
 
@@ -60,7 +61,8 @@ public class Unseeable extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        instance = this;
+        instance = getPlugin(Unseeable.class);
+        
         setup = false;
 
         random = new Random().nextInt();
